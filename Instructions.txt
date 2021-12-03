@@ -16,5 +16,5 @@ Setup ZeroTier network interfaces
 	2.Run the powershell script that was downloaded earlier
 		powershell.exe -file SetInt.ps1
 
-
+When running AOE2, ensure to Allow all traffic from public and private network through the firewall
 		
