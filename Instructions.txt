@@ -1,0 +1,23 @@
+
+Download ZeroTier
+https://www.zerotier.com/download.shtml
+
+Join network
+af415e486f3b0d37
+
+Wait for host to accept
+
+
+
+Setup ZeroTier network interfaces
+	1. Open Powershell and type 
+		Set-ExecutionPolicy RemoteSigned
+		Get-NetIPInterface
+	2. Locate 2 interfaces and look at the ifIndex column. Should be a number
+		A) ZeroTier
+		B) Ethernet
+	3. Run the powershell script with the interface numbers located in previous step
+	
+		powershell.exe -file SetInt.ps1 -zeroTierInt 46 -ethernetInt 8
+
+		
