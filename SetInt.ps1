@@ -1,8 +1,14 @@
-﻿param ([UInt32]$zeroTierInt, [Int32]$ethernetInt)
+﻿$zIntMetric = 80
+$eIntMetric = 100
 
-Write-Output $zeroTierInt
-Write-Output $ethernetInt
+$zInt = Get-NetIPInterface | Where-Object {$_.InterfaceAlias -Match "ZeroTier*"}
+$zNum = $zInt.Get(0).ifIndex
+Write-Output $zNum
 
-Set-NetIPInterface -InterfaceIndex $zeroTierInt -InterfaceMetric 80
-Set-NetIPInterface -InterfaceIndex $ethernetInt -InterfaceMetric 100
+$eInt = Get-NetIPInterface | Where-Object {$_.InterfaceAlias -Match "Ethernet"}
+$eNum = $eInt.Get(0).ifIndex
+Write-Output $eNum
+
+Set-NetIPInterface -InterfaceIndex $zNum -InterfaceMetric $zIntMetric
+Set-NetIPInterface -InterfaceIndex $eNum -InterfaceMetric $eIntMetric
 Get-NetIPInterface
