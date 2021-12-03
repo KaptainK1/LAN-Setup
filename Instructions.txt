@@ -1,3 +1,5 @@
+GitHub
+https://github.com/KaptainK1/LAN-Setup
 
 Download ZeroTier
 https://www.zerotier.com/download.shtml
@@ -8,9 +10,10 @@ af415e486f3b0d37
 Wait for host to accept
 
 Setup ZeroTier network interfaces
-	1. Open Powershell and type 
+	1. Open Powershell and type
+		cd \PATH TO WHERE YOU DOWNLOADED THE FILES
 		Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-	2.Run the powershell script
+	2.Run the powershell script that was downloaded earlier
 		powershell.exe -file SetInt.ps1
 
 
