@@ -9,7 +9,7 @@ Wait for host to accept
 
 Setup ZeroTier network interfaces
 	1. Open Powershell and type 
-		Set-ExecutionPolicy RemoteSigned
+		Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 	2.Run the powershell script
 		powershell.exe -file SetInt.ps1
 
